@@ -19,7 +19,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginBloc> {
     bloc.stream.listen((state) async {
       if (state is LoginSuccess) {
         await Future.delayed(Duration(milliseconds: 300));
-        Modular.to.navigate('/product/red');
+        Modular.to.navigate('/product/girl');
       }
       if (state is LoginFailure) {
         final banner = MaterialBanner(
