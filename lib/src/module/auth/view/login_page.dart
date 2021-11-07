@@ -38,30 +38,39 @@ class _LoginPageState extends ModularState<LoginPage, LoginBloc> {
         title: Text('Login Page'),
       ),
       body: BlocBuilder<LoginBloc, LoginState>(
-          bloc: bloc,
-          builder: (context, state) {
-            if (state is LoginLoading) {
-              return Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-
-            if (state is LoginSuccess) {
-              return Center(
-                child: Text('Entrou'),
-              );
-            }
-
+        bloc: bloc,
+        builder: (context, state) {
+          if (state is LoginLoading) {
             return Center(
-              child: ElevatedButton(
-                onPressed: () {
-                  bloc.add(
-                      LoginWithEmail(password: '123', email: 'jhon@gmail.com'));
-                },
-                child: Text('Entrar'),
-              ),
+              child: CircularProgressIndicator(),
             );
-          }),
+          }
+
+          if (state is LoginSuccess) {
+            return Center(
+              child: Text('Bem vindo'),
+            );
+          }
+
+          return Center(
+            child: Column(
+              children: [
+                Image.network(
+                  'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b3d92318-ada3-4ef8-9d9c-6bc960da1326/desiqop-b53dc4dd-d94d-4587-a1e4-b11a2501b1c0.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IzZDkyMzE4LWFkYTMtNGVmOC05ZDljLTZiYzk2MGRhMTMyNlwvZGVzaXFvcC1iNTNkYzRkZC1kOTRkLTQ1ODctYTFlNC1iMTFhMjUwMWIxYzAuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZYT3O1RRwCkBzY6i_AjjEWlbwOwQJfQZxl9hI1r9-1A',
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    bloc.add(
+                      LoginWithEmail(password: '123', email: 'jhon@gmail.com'),
+                    );
+                  },
+                  child: Text('Entrar'),
+                ),
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 }
