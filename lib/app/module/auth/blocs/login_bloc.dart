@@ -1,5 +1,5 @@
-import 'package:flutter_aprendendo_modular/src/module/auth/blocs/states/login_state.dart';
-import 'package:flutter_aprendendo_modular/src/module/auth/repositories/login_repository.dart';
+import 'package:flutter_aprendendo_modular/app/module/auth/blocs/states/login_state.dart';
+import 'package:flutter_aprendendo_modular/app/module/auth/repositories/login_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'events/login_event.dart';
 

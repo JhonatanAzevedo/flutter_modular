@@ -1,5 +1,5 @@
-import 'package:flutter_aprendendo_modular/src/module/auth/repositories/login_repository.dart';
-import 'package:flutter_aprendendo_modular/src/module/auth/view/login_page.dart';
+import 'package:flutter_aprendendo_modular/app/module/auth/repositories/login_repository.dart';
+import 'package:flutter_aprendendo_modular/app/module/auth/view/login_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import 'blocs/login_bloc.dart';

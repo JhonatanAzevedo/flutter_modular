@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_aprendendo_modular/src/module/auth/blocs/events/login_event.dart';
-import 'package:flutter_aprendendo_modular/src/module/auth/blocs/login_bloc.dart';
-import 'package:flutter_aprendendo_modular/src/module/auth/blocs/states/login_state.dart';
+import 'package:flutter_aprendendo_modular/app/module/auth/blocs/events/login_event.dart';
+import 'package:flutter_aprendendo_modular/app/module/auth/blocs/login_bloc.dart';
+import 'package:flutter_aprendendo_modular/app/module/auth/blocs/states/login_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -34,9 +34,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginBloc> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Login Page'),
-      ),
+      backgroundColor: Colors.grey,
       body: BlocBuilder<LoginBloc, LoginState>(
         bloc: bloc,
         builder: (context, state) {
@@ -54,6 +52,8 @@ class _LoginPageState extends ModularState<LoginPage, LoginBloc> {
 
           return Center(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.network(
                   'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b3d92318-ada3-4ef8-9d9c-6bc960da1326/desiqop-b53dc4dd-d94d-4587-a1e4-b11a2501b1c0.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IzZDkyMzE4LWFkYTMtNGVmOC05ZDljLTZiYzk2MGRhMTMyNlwvZGVzaXFvcC1iNTNkYzRkZC1kOTRkLTQ1ODctYTFlNC1iMTFhMjUwMWIxYzAuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZYT3O1RRwCkBzY6i_AjjEWlbwOwQJfQZxl9hI1r9-1A',
